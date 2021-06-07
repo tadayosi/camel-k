@@ -20,8 +20,7 @@ name: knative
 on:
   pull_request:
     branches:
-      - main
-      - "release-*"
+      - test-knative
     paths-ignore:
       - 'docs/**'
       - 'proposals/**'
@@ -32,8 +31,7 @@ on:
       - 'NOTICE'
   push:
     branches:
-      - main
-      - "release-*"
+      - test-knative
     paths-ignore:
       - 'docs/**'
       - 'proposals/**'
