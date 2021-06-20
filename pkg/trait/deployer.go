@@ -96,6 +96,8 @@ func (t *deployerTrait) Apply(e *Environment) error {
 					} else if isIncompatibleServerError(err) {
 						t.L.Info("Fallback to client-side apply to patch resources")
 						hasServerSideApply = false
+					} else {
+						t.L.Errorf(err, ">>>>> SSA error: %v", err)
 					}
 				}
 				if err := t.clientSideApply(env, resource); err != nil {
